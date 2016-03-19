@@ -1,0 +1,1 @@
+These are the base templates for PR's, issue reporting, and contributing. Add these to new repos as necessary. See [here](https://github.com/blog/2111-issue-and-pull-request-templates) for more info on how they work.
