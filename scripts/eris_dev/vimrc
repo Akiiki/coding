@@ -1,0 +1,4 @@
+set rtp+=$HOME/.vim/vim-go
+filetype plugin indent on
+syntax on
+set encoding=utf-8
