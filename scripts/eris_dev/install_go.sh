@@ -13,14 +13,16 @@ USER=`whoami`
 
 # install go
 cd /home/$USER
-wget https://storage.googleapis.com/golang/go1.4.2.src.tar.gz
-tar -xzvf go*.tar.gz
-cd go/src
-./make.bash
+
+sudo apt-get install -y gccgo-go
+curl -O https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz
+tar -xvf go1.5.3.linux-amd64.tar.gz
+mkdir -p ~/go/src ~/go/bin ~/go/pkg
+
 cd /home/$USER
 echo "export GOROOT=/home/$USER/go" >> /home/$USER/.profile
-echo "export GOPATH=/home/$USER/goApps" >> /home/$USER/.profile
+echo "export GOPATH=/home/$USER/go" >> /home/$USER/.profile
 echo 'export PATH=$PATH:$GOROOT/bin' >> /home/$USER/.profile
 source /home/$USER/.profile
 
-cd /home/$USER/new-server
+cd /home/$USER/coding/scripts/eris_dev

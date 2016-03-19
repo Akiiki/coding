@@ -7,7 +7,7 @@ Ensure you are logged in as root
 
 To fetch the directory in the first place, run:
 ```
-apt-get update
+apt-get update -y
 apt-get upgrade -y
 apt-get install git
 git clone https://github.com/coding /coding
