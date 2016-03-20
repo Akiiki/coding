@@ -9,9 +9,9 @@ To fetch the directory in the first place, run:
 ```
 apt-get update -y
 apt-get upgrade -y
-apt-get install git
-git clone https://github.com/coding /coding
-cd /coding/scripts/eris-dev
+apt-get install git -y
+git clone https://github.com/eris-ltd/coding /coding
+cd /coding/scripts/eris_dev
 ```
 
 Add your info to `info.sh`
@@ -25,15 +25,18 @@ Add your info to `info.sh`
 Note you should only ever run this script once.
 
 You should now be some user (not root). Change to his directory:
+
+`cd ~/coding/scripts/eris_dev`
+
 Log out and ssh back in with the new user.
 
-`cd ~/new-server`
 
 ## Install golang
 
 `source ./install_go.sh`
 
 ## Install docker & docker-machine
+`sudo chmod +s install_docker.sh` so that the script runs as sudo
 `source ./install_docker.sh`
 
 Log in and back out of the server for the changes to take hold. 

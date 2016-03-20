@@ -20,10 +20,10 @@ mkdir /home/$USER/.ssh
 chmod 700 /home/$USER/.ssh
 
 # copy this dir into the users
-mkdir -p /home/$USER/new-server
-cp -a ./* /home/$USER/new-server/
-cp -a ./.git /home/$USER/new-server/
-chmod 700 /home/$USER/new-server
+mkdir -p /home/$USER/coding
+cp -a ./* /home/$USER/coding
+cp -a ./.git /home/$USER/coding
+chmod 700 /home/$USER/coding
 
 cp /etc/skel/.bashrc /home/$USER/
 cp /etc/skel/.profile /home/$USER/
