@@ -26,4 +26,4 @@ echo `docker-machine version`
 
 echo "Please log in and back out to ensure the changes take hold"
 
-echo "Then run \'docker run hello-world\' to confirm"
+echo "Then run \"docker run hello-world\" to confirm"

@@ -30,19 +30,18 @@ We do this first because its easier as root
 
 Note you should only ever run this script once.
 
-You should now be some user (not root). Change to his directory:
-
-`cd ~/coding/scripts/eris_dev`
-
-As this new user, run:
+You should now be some user (not root). As this new user, run:
 
 `sudo usermod -a -G docker $USER` 
 
 to give the user permission to access the docker daemon.
 
-Log out and ssh back in with the new user.
+Log out and ssh back in with the new user and go back to the directory
+
+`cd coding/scripts/eris_dev`
 
 ## Install golang
+Check that version is up to date
 
 `source ./install_go.sh`
 
@@ -50,7 +49,9 @@ Log out and ssh back in with the new user.
 Log in and back out of the server for the changes to take hold.
 
 ## Install vim-go
-`source ./install_vim-go.sh
+Make things colourful and auto `gofmt`.
+
+`source ./install_vim-go.sh`
 
 ## Add some convenience functions/aliases.
 (these can be configured as you see fit)
