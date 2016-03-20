@@ -20,9 +20,8 @@ tar -xvf go1.5.3.linux-amd64.tar.gz
 mkdir -p ~/go/src ~/go/bin ~/go/pkg
 
 cd /home/$USER
-echo "export GOROOT=/home/$USER/go" >> /home/$USER/.profile
 echo "export GOPATH=/home/$USER/go" >> /home/$USER/.profile
-echo 'export PATH=$PATH:$GOROOT/bin' >> /home/$USER/.profile
+echo "export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH" >> /home/$USER/.profile
 source /home/$USER/.profile
 
 cd /home/$USER/coding/scripts/eris_dev

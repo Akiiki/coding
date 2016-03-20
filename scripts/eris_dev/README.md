@@ -3,7 +3,7 @@ Setting up a development environment for Eris
 
 This directory contains scripts for easily installing vrious development dependencies required for the eris stack. It assumes Ubuntu 14.04 and it is recommended to have a box with >= 1G of RAM.
 
-Ensure you are logged in as root 
+Ensure you are logged in as root
 
 To fetch the directory in the first place, run:
 ```
@@ -14,9 +14,15 @@ git clone https://github.com/eris-ltd/coding /coding
 cd /coding/scripts/eris_dev
 ```
 
-Add your info to `info.sh`
 
 # To get set up:
+## Add your info to `info.sh`
+These infos are used throughout the installation process.
+
+## Install docker & docker-machine
+We do this first because its easier as root
+
+`source ./install_docker.sh`
 
 ## Harden the server
 
@@ -28,18 +34,20 @@ You should now be some user (not root). Change to his directory:
 
 `cd ~/coding/scripts/eris_dev`
 
-Log out and ssh back in with the new user.
+As this new user, run:
 
+`sudo usermod -a -G docker $USER` 
+
+to give the user permission to access the docker daemon.
+
+Log out and ssh back in with the new user.
 
 ## Install golang
 
 `source ./install_go.sh`
 
-## Install docker & docker-machine
-`sudo chmod +s install_docker.sh` so that the script runs as sudo
-`source ./install_docker.sh`
 
-Log in and back out of the server for the changes to take hold. 
+Log in and back out of the server for the changes to take hold.
 
 ## Install vim-go
 `source ./install_vim-go.sh
@@ -48,3 +56,4 @@ Log in and back out of the server for the changes to take hold.
 (these can be configured as you see fit)
 
 `source ./convenience.sh`
+

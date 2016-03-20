@@ -20,10 +20,10 @@ mkdir /home/$USER/.ssh
 chmod 700 /home/$USER/.ssh
 
 # copy this dir into the users
-mkdir -p /home/$USER/coding
-cp -a ./* /home/$USER/coding
-cp -a ./.git /home/$USER/coding
-chmod 700 /home/$USER/coding
+mkdir -p /home/$USER/coding/scripts/eris_dev
+cp -a ./* /home/$USER/coding/scripts/eris_dev
+cp -a ./.git /home/$USER/coding/scripts/eris_dev
+chmod 700 /home/$USER/coding/scripts/eris_dev
 
 cp /etc/skel/.bashrc /home/$USER/
 cp /etc/skel/.profile /home/$USER/
