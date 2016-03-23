@@ -1,3 +1,5 @@
+WARNING: This is a WIP and hasn't been fully tested. Use at own risk.
+
 Setting up a development environment for Eris
 ----------
 
