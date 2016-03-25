@@ -1,29 +1,15 @@
 #!/bin/bash -x
 # set -e
 
-# assumes dependencies have already been installed (eg. make screen gcc git mercurial libc6-dev pkg-config libgmp-dev)
+GOVERSION="1.5"
 
-if [ `whoami` == "root" ];
-then
-	echo "You should not run this script as root"
-	exit 1
-fi
+curl -sSL https://storage.googleapis.com/golang/go"$GOVERSION".linux-amd64.tar.gz | sudo tar -C /usr/local -xzf - &>/dev/null
 
-USER=`whoami`
-
-# install go
-cd /home/$USER
-cd /home/$USER
-
-wget https://storage.googleapis.com/golang/go1.5.3.src.tar.gz
-tar -xzvf go*.tar.gz
-cd go/src
-./make.bash
-cd /home/$USER
-
-echo "export GOROOT=/home/$USER/go" >> /home/$USER/.profile
-echo "export GOPATH=/home/$USER/goApps" >> /home/$USER/.profile
-echo 'export PATH=$PATH:$GOROOT/bin' >> /home/$USER/.profile
-source /home/$USER/.profile
-
-cd /home/$USER/coding/scripts/eris_dev
+## TODO fix for the new user
+mkdir --parents $HOME/go
+export GOPATH=$HOME/go
+export PATH=$HOME/go/bin:/usr/local/go/bin:$PATH
+echo "export GOROOT=/usr/local/go" >> $HOME/.bashrc
+echo "export GOPATH=$HOME/go" >> $HOME/.bashrc
+echo "export PATH=$HOME/go/bin:/usr/local/go/bin:$PATH" >> $HOME/.bashrc
+echo "Finished Setting up Go."

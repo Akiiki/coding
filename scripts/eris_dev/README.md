@@ -26,11 +26,16 @@ We do this first because its easier as root
 
 `source ./install_docker.sh`
 
+## Install golang
+Check that version is up to date
+
+`source ./install_go.sh`
+
 ## Harden the server
 
 `bash new_server.sh`
 
-Note you should only ever run this script once.
+Note: you should only ever run this script once.
 
 You should now be some user (not root). As this new user, run:
 
@@ -41,12 +46,6 @@ to give the user permission to access the docker daemon.
 Log out and ssh back in with the new user and go back to the directory
 
 `cd coding/scripts/eris_dev`
-
-## Install golang
-Check that version is up to date
-
-`source ./install_go.sh`
-
 
 Log in and back out of the server for the changes to take hold.
 
