@@ -1,56 +1,27 @@
-forked from: https://github.com/docker/docker/blob/master/CONTRIBUTING.md
+# Contributing to `ADD YOUR REPO HERE`:
+Forked from docker's [contributing guidelines](https://github.com/docker/docker/blob/master/CONTRIBUTING.md)
 
 ## Bug Reporting
 
 A great way to contribute to the project is to send a detailed report when you encounter an issue. We always appreciate a well-written, thorough bug report, and will thank you for it!
 
-Check that the issue doesn't already exist before submitting an issue. If you find a match, you can use the "subscribe" button to get notified on updates. Do not leave random "+1" or "I have this too" comments, as they only clutter the discussion, and don't help resolving it. However, if you have ways to reproduce the issue or have additional information that may help resolving the issue, please leave a comment.
+Check that the issue doesn't already exist before submitting an issue. If you find a match, you can use the "subscribe" button to get notified on updates. Add a :+1: if you've also encountered this issue. If you have ways to reproduce the issue or have additional information that may help resolving the issue, please leave a comment.
 
-When reporting issues, always include:
+Also include the steps required to reproduce the problem if possible and applicable. This information will help us review and fix your issue faster. When sending lengthy log-files, post them as a gist (https://gist.github.com). Don't forget to remove sensitive data from your logfiles before posting (you can replace those parts with "REDACTED").
 
-    The output of `eris version`.
-    The output of `docker version`.
-
-Also include the steps required to reproduce the problem if possible and applicable. This information will help us review and fix your issue faster. When sending lengthy log-files, consider posting them as a gist (https://gist.github.com). Don't forget to remove sensitive data from your logfiles before posting (you can replace those parts with "REDACTED").
-
-*Issue Report Template:*
-
-```
-Description of problem:
-
-`eris version`:
-
-`docker version`:
-
-Environment details (AWS, VirtualBox, physical, etc.):
-
-How reproducible:
-
-Steps to Reproduce:
-1.
-2.
-3.
-
-Actual Results:
-
-Expected Results:
-
-Additional info:
-```
-
-Finally, add a label to your bug (critical or minor). Critical bugs will likely be addressed quickly while minor ones may take awhile. Pull requests welcome for either, just let us know you're working on one in the issue (we use the in-progress label accordingly).
+Our [ISSUE_TEMPLATE.md](ISSUE_TEMPLATE.md) will autopopulate the new issue.
 
 ## Contribution Tips and Guidelines
 
-### Pull requests are always welcome
+### Pull requests are always welcome (to `develop` rather than `master`).
 
-Not sure if that typo is worth a pull request? Found a bug and know how to fix it? Do it! We will appreciate it. Any significant improvement should be documented as a GitHub issue (or discussed on Slack) before anybody starts working on it. See [here](https://docs.docker.com/opensource/workflow/make-a-contribution/) for a useful contribution workflow.
+Not sure if that typo is worth a pull request? Found a bug and know how to fix it? Do it! We will appreciate it. Any significant improvement should be documented as a GitHub issue (or discussed on Slack) before anybody starts working on it. Be sure to read up on [How The Marmots Git](https://github.com/eris-ltd/coding/wiki/How-The-Marmots-Git) before beginning any work.
 
 We are always thrilled to receive pull requests (and bug reports!) and we do our best to process them quickly. 
 
 ## Conventions
 
-Fork the repository and make changes on your fork in a feature branch:
+Fork the repository and make changes on your fork in a feature branch (branched from develop):
 
     If it's a bug fix branch, name it XXXX-something where XXXX is the number of the issue.
     If it's a feature branch, create an enhancement issue to announce your intentions, and name it XXXX-something where XXXX is the number of the issue.
@@ -67,9 +38,9 @@ Commit messages must start with a short summary (max. 50 chars) written in the i
 
 Code review comments may be added to your pull request. Discuss, then make the suggested modifications and push additional commits to your feature branch. 
 
-Pull requests must be cleanly rebased on top of master without multiple branches mixed into the PR.
+Pull requests must be cleanly rebased on top of develop without multiple branches mixed into the PR.
 
-*Git tip:* If your PR no longer merges cleanly, use `git rebase master` in your feature branch to update your pull request rather than merge master.
+*Git tip:* If your PR no longer merges cleanly, use `git rebase develop` in your feature branch to update your pull request rather than merge develop.
 
 Before you make a pull request, squash your commits into logical units of work using `git rebase -i` and `git push -f`. A logical unit of work is a consistent set of patches that should be reviewed together: for example, upgrading the version of a vendored dependency and taking advantage of its now available new feature constitute two separate units of work. Implementing a new function and calling it in another file constitute a single logical unit of work. The very high majority of submissions should have a single commit, so if in doubt: squash down to one.
 
