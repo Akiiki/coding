@@ -1,6 +1,11 @@
 #! /bin/bash
+export AWS_ACCESS_KEY_ID=<key>
+export AWS_SECRET_ACCESS_KEY=<key>
+export AWS_VPC_ID=<id>
+#AWS_DEFAULT_REGION=<region>
+#AWS_SECURITY_GROUP=<group>
 
-MACH_PREFIX=$1
+MACH_PREFIX=eris
 
 EC2_REGIONS=("us-east-1" "eu-central-1" "us-west-1" "ap-southeast-1" "us-west-2" "eu-west-1" "ap-northeast-1" "ap-southeast-2" "sa-east-1")
 
