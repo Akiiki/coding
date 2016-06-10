@@ -9,27 +9,15 @@ echo "Setting chain name:"
 chain_name=doublo
 echo "$chain_name"
 echo ""
+name_full="$chain_name"_full_000
 
-echo "Making key and genesis file"
-eris chains make --chain-type=simplechain $chain_name
-
-echo "Getting address"
-echo ""
-ADDR=`eris services exec keys "ls /home/eris/.eris/keys/data"`
-#ADDR=`eris keys ls --container --quiet` ##TODO quiet flag
-echo "$ADDR"
-echo ""
-
-echo "Setting pubkey"
-echo ""
-PUB=`eris keys pub $ADDR`
-echo "$PUB"
-echo ""
-
-echo "Setting and chain directory:"
+echo "Setting chain directory:"
 chain_dir=$HOME/.eris/chains/$chain_name 
 echo "$chain_dir"
 echo ""
+
+echo "Making key and genesis file"
+eris chains make --chain-type=simplechain $chain_name
 
 echo "Copying default config to "$chain_dir"/default.toml"
 echo ""
@@ -40,4 +28,3 @@ echo ""
 eris chains new $chain_name --dir $chain_dir -p
 sleep 1
 echo "Chain started"
-
